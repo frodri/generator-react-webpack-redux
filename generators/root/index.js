@@ -20,6 +20,12 @@ module.exports = generator.Base.extend({
       this.templatePath('store.js'),
       this.destinationPath('src/stores/index.js')
     );
+    
+    // Copy the routes
+    this.fs.copy(
+      this.templatePath('routes.js'),
+      this.destinationPath('src/routes/index.js')
+    );
 
     // Copy the root reducer
     this.fs.copy(
