@@ -41,12 +41,6 @@ const getRelativePath = function(name, type, suffix) {
   return [portableFilePath, suffix].join('.');
 };
 
-const getRouteImportPath = function(name, type) {
-  const filePath = path.join('..', type, name);
-  const portableFilePath = path.sep === '/' ? filePath : filePath.split(path.sep).join('/');
-  return portableFilePath;
-};
-
 const getBaseName = function(path) {
   const items = path.split('/');
   return items[items.length - 1];
@@ -57,6 +51,5 @@ module.exports = {
   write: write,
   getDestinationPath: getDestinationPath,
   getBaseName: getBaseName,
-  getRelativePath: getRelativePath,
-  getRouteImportPath: getRouteImportPath
+  getRelativePath: getRelativePath
 }

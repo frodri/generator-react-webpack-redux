@@ -58,8 +58,7 @@ describe('react-webpack-redux:reducer', () => {
 
       createGeneratedReducer('namespaced/test', () => {
         assert.fileContent(rootReducerPath, '/* Populated by react-webpack-redux:reducer */');
-        // Routing reducer is included by default - should I test for it's presence along with the test one?
-        assert.fileContent(rootReducerPath, 'test: require(\'../reducers/namespaced/test.js\')');
+        assert.fileContent(rootReducerPath, '{ test: require(\'../reducers/namespaced/test.js\')');
         done();
       });
     });
